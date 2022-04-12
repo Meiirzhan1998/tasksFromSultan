@@ -9,19 +9,17 @@ public class Task2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Enter array's size:");
+        System.out.print("Enter array's size:");
         int size = sc.nextInt();
+        int sum = 0;
         int[] array = new int[size];
-        System.out.println("Enter array items");
+        System.out.print("Enter array items");
         for (int i = 0; i < array.length; i++) {
             array[i] = sc.nextInt();
             if (array[i] == (-1)) {
                 break;
             }
-        }
-        int sum = 0;
-        for (int i1 = 0; i1 < array.length; i1++) {
-            sum = sum + array[i1];
+            sum += array[i];
         }
         System.out.println("Sum " + sum);
     }
