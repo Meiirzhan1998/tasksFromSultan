@@ -11,26 +11,27 @@ public class TwoSum {
         int min = 1;
         int max = 20;
         int randNum;
+        int oddNums = 0;
 
         for (int i = 0; i < array.length; i++) {
             randNum = min + (int) (Math.random() * ((max - min) + 1));
             array[i] = randNum;
+            if (array[i] % 2 != 0) {
+                oddNums++;
+            }
         }
 
         System.out.println("Enter your target from array: " + Arrays.toString(array));
         int target = sc.nextInt();
         System.out.println("target = " + target);
 
-        int idx1 = 0;
-        int idx2 = 1;
-        for (int i = array.length; i > 0; i--) {
-            if (array[idx1] + array[idx2] == target) {
-                System.out.print("[" + idx1 + ", " + idx2 + "]");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length; j++) {
+                if (array[j] + array[i] == target) {
+                    System.out.print("[" + i + ", " + j + "],");
+                }
             }
-            idx1++;
-            idx2++;
         }
-        System.out.println("The End");
     }
 }
 
